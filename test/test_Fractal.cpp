@@ -19,10 +19,6 @@ TEST(Fractals, testMandelbrotValue) {
 	std::complex<float> c2 = 0.5 + 0.5i;
 	auto res2 = Fractal<float>::Mandelbrot(z2, c2);
 	EXPECT_EQ(res2, std::complex<float> (0.5 + 0.5i));
-
-	// Reminder: never program C++ applications on windows. -- wasted hours to get boost library up and running without success.
-	// with boost it would be possible to test if our fractal can be successfully calculated using mpfr (boost::multiprecision) 
-	// In theory it should work just fine if it is a cv classified floating point data type.
 }
 
 
@@ -41,8 +37,6 @@ TEST(Fractals, testBurningShipValue) {
 	EXPECT_EQ(res2, std::complex<float>(0.5 + 0.5i));
 }
 
-//TODO: uncomment for release
-/*
 TEST(Fractals, testFunctionPass) {
 	Settings& settings(Settings::getInstance());
 	int height = (int) settings.getHeight() / 2;
@@ -57,4 +51,3 @@ TEST(Fractals, testFunctionPass) {
 	// white is not a possible colour anywhere in the image
 	EXPECT_FALSE(vec1[2] == 255);
 	EXPECT_FALSE(vec2[2] == 255);
-}*/
